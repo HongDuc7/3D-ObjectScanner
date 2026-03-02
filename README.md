@@ -10,13 +10,13 @@ An automated embedded system designed to digitize physical objects into **3D Poi
 
 ## 🛠️ Technical Stack & Frameworks
 
-* [cite_start]**Microcontroller:** STM32F407VETx (ARM Cortex-M4 with **Hardware FPU**)[cite: 2, 25].
-* [cite_start]**Core Clock:** 168 MHz (HSE 25 MHz)[cite: 7, 25].
-* [cite_start]**Framework:** STM32 Cube HAL (Hardware Abstraction Layer)[cite: 4, 11].
-* [cite_start]**Peripheral Suite:** * **USB CDC:** Virtual COM Port for real-time data streaming[cite: 11, 25].
-    * [cite_start]**ADC1:** 12-bit resolution for distance sensing (PA0)[cite: 25].
-    * [cite_start]**TIM3 & TIM4:** PWM Generation for stepper motor control (PC6 & PD12)[cite: 25].
-* [cite_start]**Software:** STM32CubeIDE[cite: 18], MeshLab (Post-processing).
+* **Microcontroller:** STM32F407VETx (ARM Cortex-M4 with **Hardware FPU**)[cite: 2, 25].
+* **Core Clock:** 168 MHz (HSE 25 MHz)[cite: 7, 25].
+* **Framework:** STM32 Cube HAL (Hardware Abstraction Layer)[cite: 4, 11].
+* **Peripheral Suite:** * **USB CDC:** Virtual COM Port for real-time data streaming[cite: 11, 25].
+    * **ADC1:** 12-bit resolution for distance sensing (PA0)[cite: 25].
+    * **TIM3 & TIM4:** PWM Generation for stepper motor control (PC6 & PD12)[cite: 25].
+* **Software:** STM32CubeIDE[cite: 18], MeshLab (Post-processing).
 
 ---
 
