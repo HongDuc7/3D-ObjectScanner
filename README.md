@@ -2,7 +2,7 @@
 
 An automated embedded system designed to digitize physical objects into **3D Point Cloud** data. This project leverages Infrared (IR) triangulation and synchronized motion control to generate high-fidelity spatial coordinates for 3D reconstruction in **MeshLab**.
 
-> 🎓 **Course Project** – *Embedded System Design (CE224)*
+> 🎓 **Course Project** – *Electronic Devices and Circuits (CE124)*
 > 
 > 📍 **University of Information and Technology (UIT) – VNU-HCM**
 
@@ -10,13 +10,13 @@ An automated embedded system designed to digitize physical objects into **3D Poi
 
 ## 🛠️ Technical Stack & Frameworks
 
-* **Microcontroller:** STM32F407VETx (ARM Cortex-M4 with **Hardware FPU**)[cite: 2, 25].
-* **Core Clock:** 168 MHz (HSE 25 MHz)[cite: 7, 25].
-* **Framework:** STM32 Cube HAL (Hardware Abstraction Layer)[cite: 4, 11].
-* **Peripheral Suite:** * **USB CDC:** Virtual COM Port for real-time data streaming[cite: 11, 25].
-    * **ADC1:** 12-bit resolution for distance sensing (PA0)[cite: 25].
-    * **TIM3 & TIM4:** PWM Generation for stepper motor control (PC6 & PD12)[cite: 25].
-* **Software:** STM32CubeIDE[cite: 18], MeshLab (Post-processing).
+* **Microcontroller:** STM32F407VETx (ARM Cortex-M4 with **Hardware FPU**)
+* **Core Clock:** 168 MHz (HSE 25 MHz)
+* **Framework:** STM32 Cube HAL (Hardware Abstraction Layer)
+* **Peripheral Suite:** * **USB CDC:** Virtual COM Port for real-time data streaming
+    * **ADC1:** 12-bit resolution for distance sensing (PA0)
+    * **TIM3 & TIM4:** PWM Generation for stepper motor control (PC6 & PD12)
+* **Software:** STM32CubeIDE, MeshLab (Post-processing).
 
 ---
 
@@ -26,10 +26,10 @@ An automated embedded system designed to digitize physical objects into **3D Poi
 The scanner operates on a **Cylindrical Kinematic Model**. By rotating a turntable and incrementally raising an IR sensor along a Z-axis lead screw, the system maps the surface of an object in a helical pattern.
 
 ### 🐞 Data Processing Pipeline
-1.  [cite_start]**Acquisition:** The **Sharp IR Sensor** outputs an analog voltage to **ADC1_IN0**[cite: 25].
+1.  **Acquisition:** The **Sharp IR Sensor** outputs an analog voltage to **ADC1_IN0**.
 2.  **Linearization:** Raw 12-bit ADC values are converted to voltage and then to distance using power-law regression.
-3.  [cite_start]**Coordinate Transformation:** The system converts cylindrical coordinates $(r, \theta, z)$ into Cartesian coordinates $(x, y, z)$ using the **Cortex-M4 FPU**[cite: 2].
-4.  [cite_start]**Transmission:** Formatted $(x, y, z)$ data is streamed via **USB OTG FS** [cite: 25] to the host PC.
+3.  **Coordinate Transformation:** The system converts cylindrical coordinates $(r, \theta, z)$ into Cartesian coordinates $(x, y, z)$ using the **Cortex-M4 FPU**.
+4.  **Transmission:** Formatted $(x, y, z)$ data is streamed via **USB OTG FS**  to the host PC.
 
 
 
@@ -39,7 +39,7 @@ The scanner operates on a **Cylindrical Kinematic Model**. By rotating a turntab
 
 | Component | Technical Description |
 | :--- | :--- |
-| **STM32F407VET6** | [cite_start]High-performance MCU handling real-time control and math[cite: 2]. |
+| **STM32F407VET6** | [cite_start]High-performance MCU handling real-time control and math. |
 | **Stepper 17HS4401** | NEMA 17 motor providing precise rotation and linear elevation. |
 | **Sharp IR Sensor** | Triangulation-based sensor for non-contact distance measurement. |
 | **LM2596 Buck Converter** | DC-DC step-down providing a stable 5V rail. |
