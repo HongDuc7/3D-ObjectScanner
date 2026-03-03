@@ -1,6 +1,6 @@
-# 🏺 High-Precision 3D Point Cloud Scanner
+# 🏺 High-Precision 3D Point Scanner
 
-An automated embedded system designed to digitize physical objects into **3D Point Cloud** data. This project leverages Infrared (IR) triangulation and synchronized motion control to generate high-fidelity spatial coordinates for 3D reconstruction in **MeshLab**.
+This project is an Automated 3D Scanner designed to bridge the gap between the physical and digital worlds. It transforms real-life objects—like a small plant or a clay model—into precise digital 3D models by capturing thousands of individual spatial points.
 
 > 🎓 **Course Project** – *Electronic Devices and Circuits (CE124)*
 > 
@@ -31,15 +31,13 @@ The scanner operates on a **Cylindrical Kinematic Model**. By rotating a turntab
 3.  **Coordinate Transformation:** The system converts cylindrical coordinates $(r, \theta, z)$ into Cartesian coordinates $(x, y, z)$ using the **Cortex-M4 FPU**.
 4.  **Transmission:** Formatted $(x, y, z)$ data is streamed via **USB OTG FS**  to the host PC.
 
-
-
 ---
 
 ## 🔌 Hardware Requirements
 
 | Component | Technical Description |
 | :--- | :--- |
-| **STM32F407VET6** | [cite_start]High-performance MCU handling real-time control and math. |
+| **STM32F407VET6** | High-performance MCU handling real-time control and math. |
 | **Stepper 17HS4401** | NEMA 17 motor providing precise rotation and linear elevation. |
 | **Sharp IR Sensor** | Triangulation-based sensor for non-contact distance measurement. |
 | **LM2596 Buck Converter** | DC-DC step-down providing a stable 5V rail. |
